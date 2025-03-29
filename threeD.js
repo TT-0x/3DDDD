@@ -11,7 +11,7 @@ document.getElementById('viewer').appendChild(renderer.domElement);
 const light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
 
-const loader = new GLTFLoader();
+const loader = new GLTFLoader(); // 這裡現在是正確的
 loader.load('models/112321005_LOD0.glb', (gltf) => {
     scene.add(gltf.scene);
 }, undefined, (error) => {
