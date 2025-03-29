@@ -9,7 +9,7 @@
 <body>
     <div id="viewer"></div>
     <script type="module">
-        // 使用完整的 URL 路徑來導入 three.js 和 GLTFLoader
+        // 正確使用 CDN 的完整 URL 來導入 three.js 和 GLTFLoader
         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
         import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
 
@@ -24,8 +24,9 @@
         scene.add(light);
 
         // 創建 GLTFLoader 實例
-        const loader = new GLTFLoader(); 
+        const loader = new GLTFLoader();
 
+        // 載入 GLB 模型
         loader.load('https://raw.githubusercontent.com/TT-0x/3DDDD/main/models/112321005_LOD0.glb', (gltf) => {
             scene.add(gltf.scene);
         }, undefined, (error) => {
