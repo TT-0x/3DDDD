@@ -22,7 +22,7 @@ document.getElementById('viewer').appendChild(renderer.domElement);
 
 const light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
-
+const loader = new GLTFLoader();
 loader.load('https://raw.githubusercontent.com/TT-0x/3DDDD/main/models/112321005_LOD0.glb', (gltf) => {
     scene.add(gltf.scene);
 }, undefined, (error) => {
