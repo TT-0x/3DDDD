@@ -8,7 +8,7 @@ const light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
 
 const loader = new THREE.GLTFLoader();
-loader.load('models/model.glb', function (gltf) {
+loader.load('models/112321005_LOD0.glb', function (gltf) {
     scene.add(gltf.scene);
 }, undefined, function (error) {
     console.error('載入失敗', error);
