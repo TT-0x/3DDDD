@@ -23,12 +23,12 @@ document.getElementById('viewer').appendChild(renderer.domElement);
 const light = new THREE.AmbientLight(0xffffff);
 scene.add(light);
 
-const loader = new GLTFLoader(); // 這裡現在是正確的
-loader.load('https://github.com/TT-0x/3DDDD/blob/main/models/112321005_LOD0.glb', (gltf) => {
+loader.load('https://raw.githubusercontent.com/TT-0x/3DDDD/main/models/112321005_LOD0.glb', (gltf) => {
     scene.add(gltf.scene);
 }, undefined, (error) => {
     console.error('載入失敗', error);
 });
+
 
 camera.position.set(0, 1, 3);
 
