@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <div id="viewer"></div>
+    <div id="viewer"></div> <!-- Ensure this div exists -->
     <script type="module">
         import * as THREE from 'https://cdn.skypack.dev/three@0.128.0'; // Correct Skypack URL for Three.js
         import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js'; // Correct Skypack URL for GLTFLoader
@@ -26,7 +26,14 @@
         const renderer = new THREE.WebGLRenderer({ antialias: true });
 
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('viewer').appendChild(renderer.domElement);
+        
+        // Ensure the div with id="viewer" is present in the DOM
+        const viewerDiv = document.getElementById('viewer');
+        if (viewerDiv) {
+            viewerDiv.appendChild(renderer.domElement);
+        } else {
+            console.error('Element with id "viewer" not found.');
+        }
 
         const light = new THREE.AmbientLight(0xffffff);
         scene.add(light);
